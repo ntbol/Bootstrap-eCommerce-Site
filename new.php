@@ -1,6 +1,9 @@
 <?=template_header('Add New Product')?>
 
 <div class="content-wrapper">
+<nav style="padding-top: 20px">
+	<a href="index.php?page=admin">Back to Panel</a>
+</nav>
 <h2 style="font-size:40px; margin-bottom: 0px;">Hello, Admin</h2>
 <hr>
 <p><b>Add New Product</b></p>

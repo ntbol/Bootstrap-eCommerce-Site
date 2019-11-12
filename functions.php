@@ -34,6 +34,9 @@ echo <<<EOT
                     <a href="index.php?page=products">Products</a>
                 </nav>
                 <div class="link-icons">
+                    <a href="index.php?page=admin">
+                        <i class="fas fa-user"></i>
+                    </a>
                     <a href="index.php?page=cart">
 						<i class="fas fa-shopping-cart"></i><span>$num_items_in_cart</span>
 					</a>
