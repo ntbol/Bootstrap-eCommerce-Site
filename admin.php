@@ -5,19 +5,19 @@
 ?>
 <?=template_header('Admin Panel')?>
 
-<div class="content-wrapper">
-	<h2 style="font-size:40px; margin-bottom: 0px;">Hello, Admin</h2>
+<div class="container" style="padding: 50px 0px 50px 0px">
+	<h2 class="product-title">Hello, Admin</h2>
 	<hr>
-	<p>Delete, Modify, or Add Products Below</p>
+	<p class="black-text">Delete, Modify, or Add Products Below</p>
 	
-	<table border="1" cellpadding="10" width="100%">
+	<table border="1" cellpadding="10" width="100%" class="table table-bordered">
 		<tr>
-			<th><a href="index.php?page=new"><button style="margin-bottom: 15px">Add New Product</button></a></th>
+			<th><a href="index.php?page=new" class="theme-btn btn-block">Add Product</a></th>
 			<th>ID</th>
 			<th>Product Name</th>
 			<th>Product Desc</th>
 			<th>Price</th>
-			<th>Amount Bought</th>
+			<th>Bought</th>
 			<th>Date Added</th>
 			<th></th>
 			<th></th>
