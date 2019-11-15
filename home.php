@@ -4,7 +4,9 @@ $stmt = $pdo->prepare('SELECT * FROM products ORDER BY date_added DESC LIMIT 3')
 $stmt->execute();
 $recently_added_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$stmtfeatured = $pdo->prepare('SELECT * FROM products ORDER BY date_added DESC LIMIT 3');
+$yes = 'yes';
+
+$stmtfeatured = $pdo->prepare("SELECT * FROM products WHERE featured='$yes'");
 $stmtfeatured->execute();
 $featured = $stmtfeatured->fetchAll(PDO::FETCH_ASSOC);
 
@@ -20,7 +22,7 @@ $featured = $stmtfeatured->fetchAll(PDO::FETCH_ASSOC);
                 </p>
                 <div class="row">
                     <div class="col-lg-4" align="center">
-                        <a href="" class="theme-btn btn-block">Buy Now</a>
+                        <a href="index.php?page=products" class="theme-btn btn-block">Buy Now</a>
                     </div>
                 </div>
             </div>
@@ -41,12 +43,17 @@ $featured = $stmtfeatured->fetchAll(PDO::FETCH_ASSOC);
                 <img src="imgs/<?=$product['img']?>" width="100%;">
             </div>
             <div class="col-lg-7" style="padding-top: 75px;">
-                <p class="tagline"><i>future tagline</i></p>
+                <p class="tagline"><i><?=$product['tagline']?></i></p>
                 <h2 class="product-title"><?=$product['name']?></h2>
                 <p class="black-text">
                      <?=$product['description']?>
                 </p>
-                <h3 class="price">&dollar;<?=$product['price']?></h3>
+                <h3 class="price">
+                    &dollar;<?=$product['price']?>
+                    <?php if ($product['rrp'] > 0): ?>
+                    <span class="rrp">&dollar;<?=$product['rrp']?></span>
+                    <?php endif; ?>
+                </h3>
                 <div class="row">
                     <div class="col-lg-4" align="center">
                         <a href="index.php?page=product&id=<?=$product['id']?>" class="theme-btn btn-block btn-thin">View</a>
@@ -101,7 +108,12 @@ $featured = $stmtfeatured->fetchAll(PDO::FETCH_ASSOC);
                 <p class="black-text">
                     <?=$product['description']?>
                 </p>
-                <h3 class="price">&dollar;<?=$product['price']?></h3>
+                <h3 class="price">
+                    &dollar;<?=$product['price']?>
+                    <?php if ($product['rrp'] > 0): ?>
+                    <span class="rrp">&dollar;<?=$product['rrp']?></span>
+                    <?php endif; ?>
+                </h3>
                 <div class="row">
                     <div class="col-md-12" align="center">
                         <a href="index.php?page=product&id=<?=$product['id']?>" class="theme-btn btn-block btn-thin">View</a>

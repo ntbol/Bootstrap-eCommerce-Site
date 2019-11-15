@@ -16,22 +16,32 @@ if (isset($_GET['id'])) {
 
 <?=template_header('Edit a Product')?>
 
-<div class="content-wrapper">
-<nav style="padding-top: 20px">
-	<a href="index.php?page=admin">Back to Panel</a>
-</nav>
-<h2 style="font-size:40px; margin-bottom: 0px;">Hello, Admin</h2>
-<hr>
-<p><b>Edit Product</b></p>
-<form action="" method="post">
-	<div>
-		<input type="text" name="name" value="<?=$product['name']?>"><br><br>
-		<textarea rows="15" cols="50" name="description"><?=$product['description']?></textarea><br><br>
-		<input type="text" name="price" value="<?=$product['price']?>"><br><br>
-		<input type="text" name="img" value="<?=$product['img']?>"><br><br>
-		<input type="submit" name="submit" >
-	</div>
-</form>
+<div class="container" style="padding-bottom: 100px">
+	<nav style="padding-top: 100px">
+		<a href="index.php?page=admin"><p class="black-text"><span class="fas fa-arrow-left"></span> <b>Back to Panel</b></p></a>
+	</nav>
+	<h2 style="font-size:40px; margin-bottom: 0px;">Hello, Admin</h2>
+	<hr>
+	<h4><b>Edit Product</b></h4>
+	<form action="" method="post">
+		<div class="form-group">
+			<p>Product Name:</p>
+			<input type="text" name="name" value="<?=$product['name']?>" class="form-control"><br>
+			<p>Product Description:</p>
+			<textarea rows="7" cols="25" name="description" class="form-control"><?=$product['description']?></textarea><br>
+			<p>Product Tagline:</p>
+			<input type="text" name="tagline" value="<?=$product['tagline']?>" class="form-control"><br>
+			<p>On Sale Price:</p>
+			<input type="text" name="price" value="<?=$product['price']?>" class="form-control"><br>
+			<p>Regular Price:</p>
+			<input type="text" name="rrp" value="<?=$product['rrp']?>" class="form-control"><br>
+			<p>Featured?:</p>
+			<input type="checkbox" name="featured" value="yes"> : Yes<br><br>
+			<p>Product Image:</p>
+			<input type="text" name="img" value="<?=$product['img']?>" class="form-control"><br>
+			<input type="submit" name="submit" class="form-control btn btn-danger" value="Add Product">
+		</div>
+	</form>
 </div>
 <?php
 if(isset($_POST["submit"])){
@@ -49,8 +59,16 @@ if(isset($_POST["submit"])){
 	$description = htmlspecialchars($_POST['description']);
 	$price = htmlspecialchars($_POST['price']);
 	$img = htmlspecialchars($_POST['img']);
+	$rrp = htmlspecialchars($_POST['rrp']);
+	$tagline = htmlspecialchars($_POST['tagline']);
 
-	$sql = "UPDATE products SET name='$name', description='$description', price='$price', img='$img' WHERE id='$id'";
+	if (isset($_POST['featured']) && ($_POST['featured'] == "yes")) {
+		 $query .= "yes";
+		} else {
+		 $query .= "no";
+		}
+
+	$sql = "UPDATE products SET name='$name', description='$description', price='$price', img='$img', rrp='$rrp', tagline='$tagline', featured='$query' WHERE id='$id'";
 		if ($dbh->query($sql)) {
 		echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
 		}

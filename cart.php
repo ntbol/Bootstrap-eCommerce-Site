@@ -73,7 +73,7 @@ if ($products_in_cart) {
 
 <?=template_header('Cart')?>
 
-<div class="cart content-wrapper">
+<div class="container" style="padding: 100px 0px 100px 0px">
     <h1>Shopping Cart</h1>
     <form action="index.php?page=cart" method="post">
         <table>

@@ -1,19 +1,21 @@
 <?=template_header('Add New Product')?>
 
-<div class="content-wrapper">
-<nav style="padding-top: 20px">
-	<a href="index.php?page=admin">Back to Panel</a>
+<div class="container" style="padding-bottom: 100px">
+<nav style="padding-top: 100px">
+	<a href="index.php?page=admin"><p class="black-text"><span class="fas fa-arrow-left"></span> <b>Back to Panel<b></p></a>
 </nav>
 <h2 style="font-size:40px; margin-bottom: 0px;">Hello, Admin</h2>
 <hr>
 <p><b>Add New Product</b></p>
 <form action="" method="post">
-	<div>
-		<input type="text" name="name" placeholder="Product Name"><br><br>
-		<textarea rows="2" cols="25" name="desc" placeholder="Product Description"></textarea><br><br>
-		<input type="text" name="price" placeholder="Product Price"><br><br>
-		<input type="text" name="img" placeholder="Image Or URL To Image"><br><br>
-		<input type="submit" name="submit" value="Upload Product">
+	<div class="form-group">
+		<input type="text" name="name" placeholder="Product Name" class="form-control"><br>
+		<textarea rows="2" cols="25" name="desc" placeholder="Product Description" class="form-control"></textarea><br>
+		<input type="text" name="tagline" placeholder="Product Tagline" class="form-control"><br>
+		<input type="text" name="price" placeholder="Product Price" class="form-control"><br>
+		<input type="text" name="rrp" placeholder="Before Price" class="form-control"><br>
+		<input type="text" name="img" placeholder="Image Or URL To Image" class="form-control"><br>
+		<input type="submit" name="submit" value="Upload Product" class="form-control btn btn-danger">
 	</div>
 </form>
 </div>
@@ -27,8 +29,8 @@ if(isset($_POST["submit"])){
 	$dbh = new PDO("mysql:host=$hostname;dbname=cart",$username,$password);
 
 	$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
-	$sql = "INSERT INTO products (name, description, price, img)
-	VALUES ('".$_POST["name"]."','".$_POST["desc"]."','".$_POST["price"]."','".$_POST["img"]."')";
+	$sql = "INSERT INTO products (name, description, price, img, rrp, tagline)
+	VALUES ('".$_POST["name"]."','".$_POST["desc"]."','".$_POST["price"]."','".$_POST["img"]."','".$_POST["rrp"]."','".$_POST["tagline"]."')";
 		if ($dbh->query($sql)) {
 		echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
 		}
