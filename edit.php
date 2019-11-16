@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
 <?=template_header('Edit a Product')?>
 
 <div class="container" style="padding-bottom: 100px">
-	<nav style="padding-top: 100px">
+	<nav style="padding-top: 150px">
 		<a href="index.php?page=admin"><p class="black-text"><span class="fas fa-arrow-left"></span> <b>Back to Panel</b></p></a>
 	</nav>
 	<h2 style="font-size:40px; margin-bottom: 0px;">Hello, Admin</h2>

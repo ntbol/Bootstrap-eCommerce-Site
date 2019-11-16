@@ -1,7 +1,7 @@
 <?=template_header('About')?>
 
 <div class="about" style="padding-bottom: 100px">
-	<div class="container" style="padding-top: 150px;">
+	<div class="container" style="padding-top: 175px;">
 		<div class="themeline"></div>
 		<div class="row">
 			<h1 class="huge-title" style="margin-bottom: 0px; z-index: 90">OUR STORY&nbsp;</h1>

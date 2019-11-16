@@ -73,10 +73,10 @@ if ($products_in_cart) {
 
 <?=template_header('Cart')?>
 
-<div class="container" style="padding: 100px 0px 100px 0px">
-    <h1>Shopping Cart</h1>
+<div class="container" style="padding: 150px 0px 150px 0px">
+    <h2 style="font-size:40px; margin-bottom: 15px;">Shopping Cart</h2>
     <form action="index.php?page=cart" method="post">
-        <table>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <td colspan="2">Product</td>
@@ -95,13 +95,13 @@ if ($products_in_cart) {
                 <tr>
                     <td class="img">
                         <a href="index.php?page=product&id=<?=$product['id']?>">
-                            <img src="imgs/<?=$product['img']?>" width="50" height="50" alt="<?=$product['name']?>">
+                            <img src="imgs/<?=$product['img']?>" width="120" alt="<?=$product['name']?>">
                         </a>
                     </td>
                     <td>
-                        <a href="index.php?page=product&id=<?=$product['id']?>"><?=$product['name']?></a>
+                        <a href="index.php?page=product&id=<?=$product['id']?>"><p class="black-text"><?=$product['name']?></p></a>
                         <br>
-                        <a href="index.php?page=cart&remove=<?=$product['id']?>" class="remove">Remove</a>
+                        <a href="index.php?page=cart&remove=<?=$product['id']?>" class="remove"><p class="black-text">Remove</p></a>
                     </td>
                     <td class="price">&dollar;<?=$product['price']?></td>
                     <td class="quantity">
@@ -113,13 +113,15 @@ if ($products_in_cart) {
                 <?php endif; ?>
             </tbody>
         </table>
-        <div class="subtotal">
+        <div class="subtotal" align="right">
+            <h4>
             <span class="text">Subtotal</span>
             <span class="price">&dollar;<?=$subtotal?></span>
+        </h4>
         </div>
-        <div class="buttons">
-            <input type="submit" value="Update" name="update">
-            <input type="submit" value="Place Order" name="placeorder">
+        <div class="buttons" align="right">
+            <input type="submit" value="Update" name="update" class="btn btn-secondary">
+            <input type="submit" value="Place Order" name="placeorder" class="btn btn-danger">
         </div>
     </form>
 </div>

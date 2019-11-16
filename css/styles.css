@@ -52,8 +52,8 @@ body, html{
 	position: relative;
 	color: white;
 	font-weight: bold;
-	padding: 25px 0px 25px 0px;
-	position: fixed;
+	padding: 25px 0px 25px 0px!important;
+	position: fixed!important;
 	width: 100%;
 	z-index: 100;
 	top: 0;
@@ -73,6 +73,9 @@ body, html{
 	background-position: center;
 	height: 925px;
 	background-size: cover;
+	background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 

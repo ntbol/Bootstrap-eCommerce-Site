@@ -17,7 +17,7 @@ $total_products = $pdo->query('SELECT * FROM products')->rowCount();
 <?=template_header('Products')?>
 
 <div class="about" style="padding-bottom: 50px;">
-    <div class="container" style="padding-top: 50px;">
+    <div class="container" style="padding-top: 150px;">
     	<p class="tagline" style="color: black; padding-bottom: 10px"><i><?=$total_products?> Products</i></p>
         <div class="themeline"></div>
         <div class="row">

@@ -5,7 +5,7 @@
 ?>
 <?=template_header('Admin Panel')?>
 
-<div class="container" style="padding: 50px 0px 50px 0px">
+<div class="container" style="padding: 150px 0px 50px 0px">
 	<h2 class="product-title">Hello, Admin</h2>
 	<hr>
 	<p class="black-text">Delete, Modify, or Add Products Below</p>

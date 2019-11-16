@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
 <?=template_header('Product')?>
 
 
-<div class="about" style="padding: 50px 0px 200px 0px;">
+<div class="about" style="padding: 100px 0px 200px 0px;">
     <div class="container" style="padding-top: 100px;">
 
     </div>
